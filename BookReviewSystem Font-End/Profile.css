@@ -1,0 +1,160 @@
+.container-fluid{
+  background-color: rgb(216, 212, 212) !important;
+  font-family: Arial, sans-serif;
+ }
+.profile-page {
+    max-width: 800px;
+    margin: 0 auto;
+    /* padding: 20px; */
+  }
+  /* .profile-container{
+    border:2px solid navy;
+    background-color: #414c6b;
+  } */
+  .profile-header {
+    text-align: center;
+    height: 300px;
+    position: relative;
+  }
+.profile-container{
+  background-color:#C6D8D5;
+}
+  /* .profile-edit .img {
+    border: 100px solid blue;
+  } */
+
+
+  /* .cross{
+    size: 40rem;
+  } */
+  .cancel-button{
+    position: absolute;
+    top:0%;
+    right: 40%;
+  }
+
+  .img 
+  {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 100px solid blue; */
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .profile-bio {
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .favorite-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .favorite-book-card {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .favorite-book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+  }
+  
+  .review-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .review-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .review-card p {
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .review-card .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-card .rating span {
+    color: #ff9800;
+    margin-right: 5px;
+  }
+  
+  .review-card .rating .stars {
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-card .rating .stars i {
+    color: #ff9800;
+  }
+  
+  .review-card .review-text {
+    margin-top: 10px;
+  }
+  .Profile-Active{
+    border: 2px solid #007bff;
+  }
+  .allbtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .camera {
+    font-size: 30px; /* Adjust the font-size to your desired larger size */
+}
+  
+  .upload-circle .round:hover {
+    opacity: 1;
+  }
+  
+  .round input[type="file"] {
+    display: none;
+  }
+
+  .border-danger {
+    border-color: red !important;
+}
+  .usereditname,.usereditbio{
+    background: transparent;
+  border-width: 2px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background: transparent;
+  outline: 0;
+  height: 23px;
+  border-color: rgb(66, 57, 57);
+  width: 200px;
+  }

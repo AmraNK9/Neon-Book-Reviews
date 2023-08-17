@@ -1,0 +1,12 @@
+
+.container{
+    background-color: rgb(210, 137, 137) !important;
+    font-family: Arial, sans-serif;
+  }
+  .container-fluid{
+    background-color: rgb(216, 212, 212) !important;
+   }
+  .load{
+    border-radius: 10px;
+    text-transform: uppercase;
+}
