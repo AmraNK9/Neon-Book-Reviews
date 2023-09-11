@@ -11,7 +11,12 @@ $category_list=$category_controller->getAllCategory();
 $book_controller=new BookController();
 $book_list=$book_controller->getAllBooks();
 $book = array_pop($book_list);
-$book_id= ($book['id']+1);
+if(isset($book['id'])){
+    $book_id= ($book['id']+1);
+
+}else{
+    $book_id = 1;
+}
 if(isset($_POST['submit'])){
     $error=false;
     if(!empty($_POST['name'])){
@@ -23,13 +28,13 @@ if(isset($_POST['submit'])){
     $auther=$_POST['auther'];
     
     
-        $targetDir = "img/"; // Directory where you want to store the uploaded file
+        $targetDir = "img/photos/"; // Directory where you want to store the uploaded file
         $targetFile = $targetDir . basename($_FILES["img"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
     
         // Allow certain image file types
-        $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+        $allowedExtensions = array("jiff","jpg","jpeg","png","gif");
     
         // Check if the file is a valid image
         if (!in_array($imageFileType, $allowedExtensions)) {
@@ -46,7 +51,7 @@ if(isset($_POST['submit'])){
             if (move_uploaded_file($_FILES["img"]["tmp_name"], $targetFile)) {
                 $image= basename($_FILES["img"]["name"]);
             } else {
-                $img_error="Sorry, you need to upload JPG, JPEG, PNG, and GIF files";
+                $img_error="Sorry, you need to upload JPG,JIFF,JPEG,PNG, and GIF files";
                 $error=true;
             }
         }

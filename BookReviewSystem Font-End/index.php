@@ -67,7 +67,7 @@ if (!isset($_SESSION['user_email'])) {
 			var bookCardHTML = `
             <div class="book-card">
               <div class="book-card-image">
-                <img src="../image/photos/${book.image}" alt="${book.name}" />
+                <img src="../neon/img/photos/${book.image}" alt="${book.name}" />
                 <div class="book-card-overlay">
                   <a href="BookDetail.php?id=${book.id}" class="book-card-button">Read More</a>
                 </div>
@@ -101,7 +101,7 @@ if (!isset($_SESSION['user_email'])) {
 			var bookCardHTML = `
             <div class="book-card">
               <div class="book-card-image">
-                <img src="../image/photos/${book.image}" alt="${book.name}" />
+                <img src="../neon/img/photos/${book.image}" alt="${book.name}" />
                 <div class="book-card-overlay">
                   <a href="BookDetail.php?id=${book.id}" class="book-card-button">Read More</a>
                 </div>
@@ -153,7 +153,7 @@ if (!isset($_SESSION['user_email'])) {
 							<div class=" swiper-slide">
 								<div class="book-card">
 									<div class="book-card-image">
-										<img src="../image/photos/<?php echo $book['book_image'] ?>"
+										<img src="../neon/img/photos/<?php echo $book['book_image'] ?>"
 											alt="<?php echo $book['book_image'] ?>" />
 										<div class="book-card-overlay">
 											<a href="BookDetail.php?id=<?php echo $book['id'] ?>" class="book-card-button">Read
@@ -281,7 +281,7 @@ if (!isset($_SESSION['user_email'])) {
 		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
 		const swiper = new Swiper('.swiper', {
-			slidesPerView: '3',
+			slidesPerView: '1',
 			spaceBetween: 20,
 			parallax: true,
 			loop: true,
@@ -291,19 +291,19 @@ if (!isset($_SESSION['user_email'])) {
 
 			breakpoints: {
 				// when window width is >= 320px
-				480: {
+				509: {
 					slidesPerView: 2,
-					spaceBetween: 20
+					spaceBetween: 10
 				},
 				// when window width is >= 480px
-				740: {
+				840: {
 					slidesPerView: 3,
-					spaceBetween: 30
+					spaceBetween: 20
 				},
 				// when window width is >= 640px
 				1040: {
 					slidesPerView: 4,
-					spaceBetween: 40
+					spaceBetween: 20
 				}
 			}
 

@@ -127,7 +127,7 @@ if (isset($_POST['searchbyuser'])) {
                          ?>
                         <div class="book-card usersearch_book">
                             <div class="book-card-image">
-                                <img src="../image/photos/<?php echo $BookAllList['image'] ?>" alt="<?php echo $BookAllList['image'] ?>" />
+                                <img src="../neon/img/photos/<?php echo $BookAllList['image'] ?>" alt="<?php echo $BookAllList['image'] ?>" />
                                 <div class="book-card-overlay">
                                     <a href="BookDetail.php?id=<?php echo $BookAllList['id'] ?>"  style="background-color:#ffdf00; color:white;" class="book-card-button"><i class="fa-solid fa-arrow-right mx-2"></i>Read More</a>
                                 </div>
