@@ -75,7 +75,7 @@ $active_page = $_SERVER['PHP_SELF'];
     <li class="nav-item d-flex justify-content-center account">
         <a href="Profile.php">
             <div class="avatar">
-                <img src="../image/<?php if (empty($userimg)) {
+                <img src="../neon/img/avatars/<?php if (empty($userimg)) {
                     echo "user.jpg";
                 } else {
                     echo $userimg;

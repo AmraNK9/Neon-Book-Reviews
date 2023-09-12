@@ -157,7 +157,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="profile-header">
 				<div class="profile-edit d-flex justify-content-center ">
-					<img src="../image/<?php if (!empty($userimg)) {
+					<img src="../neon/img/avatars/<?php if (!empty($userimg)) {
 
 						echo $userimg;
 					} else {
@@ -228,7 +228,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 							<div class=" col-lg-4">
 							<div class="book-card">
 								<div class="book-card-image">
-									<img src="../image/photos/<?php echo $bookmark['image'] ?>" alt="<?php echo $bookmark['name'] ?>" />
+									<img src="../neon/img/photos/<?php echo $bookmark['image'] ?>" alt="<?php echo $bookmark['name'] ?>" />
 									<div class="book-card-overlay">
 										<a href="BookDetail.php?id=<?php echo $bookmark['id'] ?>" class="book-card-button">Read More</a>
 									</div>
@@ -264,7 +264,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 						<div class="review" data-review-id="<?php echo $review['id']; ?>">
 							<div class="review-header">
 								<div class="user-profile">
-									<img src="../image/<?php echo $userinfo["image"] ?>" alt="<?php echo $userinfo["image"] ?>" />
+									<img src="../neon/img/avatars/<?php echo $userinfo["image"] ?>" alt="<?php echo $userinfo["image"] ?>" />
 									<div class="user-details">
 										<h3>
 											<?php echo $userinfo["name"] ?>
@@ -290,7 +290,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 										?>
 										<a href="BookDetail.php?id=<?php echo $review_book_id['book_id'] ?>">
 											<div class="book-details">
-												<img src="../image/photos/<?php echo $book["image"] ?>" alt="<?php echo $book["image"] ?>" />
+												<img src="../neon/img/photos/<?php echo $book["image"] ?>" alt="<?php echo $book["image"] ?>" />
 												<div class="book-info">
 													<h2>
 														<?php echo $book["name"] ?>
@@ -299,7 +299,14 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 													$author = $reviews_model->get_author_by_id($book["auther_id"]);
 													?>
 													<p>by
-														<?php echo $author["name"] ?>
+
+														<?php
+														if(isset($author['name'])){
+															echo $author["name"] ;
+														}else{
+															echo "unknown";
+														}
+														?>
 													</p>
 												</div>
 											</div>

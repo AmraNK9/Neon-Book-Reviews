@@ -69,7 +69,7 @@ foreach ($reviews as $review) {
 					<div class="review" data-review-id="<?php echo $review['id']; ?>">
 						<div class="review-header">
 							<div class="user-profile">
-								<img src="../image/<?php echo $userinfo["image"] ?>"
+								<img src="../neon/img/avatars/<?php echo $userinfo["image"] ?>"
 									alt="<?php echo $userinfo["image"] ?>" />
 								<div class="user-details">
 									<h3>
@@ -94,7 +94,7 @@ foreach ($reviews as $review) {
 									?>
 									<a href="BookDetail.php?id=<?php echo $review_book_id['book_id'] ?>">
 										<div class="book-details">
-											<img src="../image/photos/<?php echo $book["image"] ?>"
+											<img src="../neon/img/photos/<?php echo $book["image"]?>"
 												alt="<?php echo $book["image"] ?>" />
 											<div class="book-info">
 												<h2>
@@ -104,7 +104,13 @@ foreach ($reviews as $review) {
 												$author = $reviews_model->get_author_by_id($book["auther_id"]);
 												?>
 												<p>by
-													<?php echo $author["name"] ?>
+													<?php
+													if(isset($author['name'])){
+														echo $author["name"];
+													}else{
+														echo "unknown";
+													}
+													 ?>
 												</p>
 											</div>
 										</div>

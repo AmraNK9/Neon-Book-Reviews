@@ -104,7 +104,7 @@ if(!isset($_SESSION['user_email']))
 					<div class="col-md-3 sm-4 mb-3 originalauthors">
 						<div class="card-parent">
 							<div class="author-card">
-							<img class="author-image card-img-top" src="../image/<?php echo $author['image'] ?>" alt="Author Image">
+							<img class="author-image card-img-top" src="../neon/img/author/<?php echo $author['image'] ?>" alt="Author Image">
 							<h2 class="author-name"><?php echo $author['name'] ?></h2>
 							<p class="author-bio">Author Bio</p>
 							<a class="author-website" href="AuthorDetail.php?id=<?php echo $author['id'] ?>" target="_blank">Author's Books</a>
