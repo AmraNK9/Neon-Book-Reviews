@@ -87,8 +87,8 @@ if (isset($_POST['searchbyuser'])) {
 <body>
     
     <!-- search bar -->
-    <div class="container book-search " style = "">
-    <div class="container ">
+    <div class="container-fluid book-search " style = "">
+    <div class="container-cus ">
         <form action="" method="post">
             <div class="row my-2">
                 <div class="col-md-4">
@@ -107,7 +107,6 @@ if (isset($_POST['searchbyuser'])) {
                             placeholder="Search..." />
                         <div class="input-group-append">
                             <button class="btn btn-primary" name="searchbyuser" style="background-color:#265077; color:white;" id="search"><i class="fa-solid fa-magnifying-glass"></i>
-                                Search
                             </button>
                         </div>
                     </div>
@@ -169,7 +168,7 @@ if (isset($_POST['searchbyuser'])) {
                             ?>
                         <div class="book-card col-md-3 usersearch_book">
                             <div class="book-card-image">
-                                <img src="../image/photos/<?php echo $book['image'] ?>" alt="<?php echo $book['image'] ?>" />
+                                <img src="../neon/img/photos/<?php echo $book['image'] ?>" alt="<?php echo $book['image'] ?>" />
                                 <div class="book-card-overlay">
                                     <a href="BookDetail.php?id=<?php echo $book['id'] ?>"  style="background-color:#ffdf00; color:white;" class="book-card-button"><i class="fa-solid fa-arrow-right mx-2"></i>Read More</a>
                                 </div>
@@ -209,10 +208,11 @@ if (isset($_POST['searchbyuser'])) {
     </div>
 
     </div>
+    </div>
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="footer-container container ">
+            <div class="footer-container  ">
                 <div class="footer-content">
                     <div class="footer-section">
                         <h4 class="text-center">About Us</h4>

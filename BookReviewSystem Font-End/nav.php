@@ -14,21 +14,38 @@ $active_page = $_SERVER['PHP_SELF'];
 
 </head>
 <style>
-    .nav{
+    nav {
+        transition: transform 0.6s ease-in-out;
+
+    }
+
+    .nav {
         box-shadow: 0px 2px 10px #111;
     }
-    .nav-height{
+
+    .nav-height {
         height: 100px;
     }
-    @media(max-width:992px){
-        .nav-height{
+
+    @media(max-width:992px) {
+        .nav-height {
             height: 170px;
         }
+     
     }
-  .hide-navbar {
-    transform: translateY(-51%);
-    transition: transform 0.3s ease-in-out;
-  }
+
+    @media(max-width:440px) {
+      
+        .navbar-nav .nav-item{
+            margin-left:0px
+        }
+        
+    }
+
+    .hide-navbar {
+        transform: translateY(-51%);
+        transition: transform 0.3s ease-in-out;
+    }
 </style>
 <!-- Navigation bar -->
 <nav style="width:100%;top :0px;z-index:99;box-shadow:0px 5px 40px #1111"
@@ -62,14 +79,14 @@ $active_page = $_SERVER['PHP_SELF'];
             </li>
 
             <li class="nav-item profile-icon ">
-                    <a class="nav-link "  style="color:white" href="Profile.php">
+                <a class="nav-link " style="color:white" href="Profile.php">
 
                     <i class="fa-solid fa-user mx-2" style="color:white,"></i>
-                        Profile
-                    </a>
+                    Profile
+                </a>
 
-                </li>
-                
+            </li>
+
         </ul>
     </div>
     <li class="nav-item d-flex justify-content-center account">
@@ -91,21 +108,20 @@ $active_page = $_SERVER['PHP_SELF'];
 </div>
 
 <script>
-  var navbar = document.querySelector('nav');
-  var lastScrollTop = 0;
-  
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    // console.log(navbar.clientHeight);
-    if(navbar.clientHeight>132){
-        if (scrollTop > lastScrollTop) {
-      navbar.classList.add('hide-navbar');
-    } else {
-      navbar.classList.remove('hide-navbar');
-    }
-    lastScrollTop = scrollTop;
-    }
+    var navbar = document.querySelector('nav');
+    var lastScrollTop = 0;
 
-  });
+    window.addEventListener('scroll', function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // console.log(navbar.clientHeight);
+        if (navbar.clientHeight > 132) {
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add('hide-navbar');
+            } else {
+                navbar.classList.remove('hide-navbar');
+            }
+            lastScrollTop = scrollTop;
+        }
+
+    });
 </script>
-

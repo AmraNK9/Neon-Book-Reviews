@@ -73,22 +73,22 @@ if(!isset($_SESSION['user_email']))
 	include_once "nav.php";
 	?>
 	<div class="container-fluid">
-	<div class="container">
+	<div class="container-cus">
 			<!-- Filter Component -->
 			<form action="" method="post">
 				<div class="row">
-					<div class="col-md-9">
+					<div class="col-md-12">
 						<div class="search-bar">
 							<div class="input-group">
 								<input	type="text"	class="form-control" id="inputauthor" placeholder="Search..." name="usersearch" value="<?php if(isset($usersearch)){echo $usersearch;} ?>"/>
 								<div class="input-group-append">
 									<button class="btn btn-primary"  id="usersearchauthor"  style="background-color:#265077; color:white; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" name="search">
-									<i class="fa-solid fa-magnifying-glass mx-2"></i>Search
+									<i class="fa-solid fa-magnifying-glass mx-2"></i>
 									</button>
 								</div>
-								<div class="col-md-1">
+								<!-- <div class="col-md-1">
 									<button class="btn btn-info clear">Cancel</button>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -106,8 +106,7 @@ if(!isset($_SESSION['user_email']))
 							<div class="author-card">
 							<img class="author-image card-img-top" src="../neon/img/author/<?php echo $author['image'] ?>" alt="Author Image">
 							<h2 class="author-name"><?php echo $author['name'] ?></h2>
-							<p class="author-bio">Author Bio</p>
-							<a class="author-website" href="AuthorDetail.php?id=<?php echo $author['id'] ?>" target="_blank">Author's Books</a>
+							<a class="author-website" href="AuthorDetail.php?id=<?php echo $author['id'] ?>" >Author's Books</a>
 							</div>
 						</div>
 					</div>
@@ -123,7 +122,7 @@ if(!isset($_SESSION['user_email']))
 					<div class="col-md-3 sm-4 mb-3">
 						<div class="card-parent">
 							<div class="author-card">
-							<img class="author-image card-img-top" src="../image/<?php echo $someauthor['image'] ?>" >
+							<img class="author-image card-img-top" src="../neon/img/author/<?php echo $someauthor['image'] ?>" >
 							<h2 class="author-name"><?php echo $someauthor['name'] ?></h2>
 							<p class="author-bio">Author Bio</p>
 							<a class="author-website" href="AuthorDetail.php" target="_blank">Author's Books</a>
@@ -156,7 +155,7 @@ if(!isset($_SESSION['user_email']))
 		
 		
 	<footer class="footer ">
-		<div class="footer-container container">
+		<div class="footer-container ">
 			<div class="footer-content">
 				<div class="footer-section">
 					<h4 class="text-center">About Us</h4>

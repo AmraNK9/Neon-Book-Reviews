@@ -17,14 +17,11 @@ $getCategory = $getAllCategory->getAllCategory();
 
 $getAllBook= new BookController();
 $getmainAllBook = $getAllBook->getMainBooks();
-//var_dump($getmainAllBook);
 
 foreach ($getCategory as $category) {
-    //var_dump($category);
 }
 
 foreach ($getUserinfo as $getUser) {
-    //var_dump($getUser) ;
     if ($_SESSION["user_email"] == $getUser['email']) {
         $userimg = $getUser['image'];
         $username = $getUser['name'];
@@ -44,7 +41,6 @@ $error_status = false;
 if (isset($_POST['searchbyuser'])) {
     $bookname = $_POST['book_name'];
     $getAllBookList = $getAllBook->getSearchBooks($bookname);
-    var_dump($getAllBookList);
 
     if (empty($getAllBookList)) {
         $error_status = true;
@@ -122,7 +118,7 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
     include_once "nav.php";
     ?>
     <div class="container-fluid">
-    <div class="container">
+    <div class="containe-cus">
         <h1>Upload Review</h1>
         <form id="upload-form" method="Post" action="Post.php">
             <div class="form-group">
@@ -130,7 +126,7 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
                 <textarea id="review-content" name="review-content" rows="8" required>
                 </textarea>
             </div>
-            <div class="container">
+            <div class="container-cus">
                 <div class="d-flex flex-wrap">
                     <?php
                     if (isset($ReviewBookList_id)) {
@@ -139,7 +135,7 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
                             ?>
                             <a href="Post.php?del=<?php echo $key ?>">
                                 <div class="book-details">
-                                    <img src="../image/photos/<?php echo $book[0]["image"] ?>"
+                                    <img src="../neon/img/photos/<?php echo $book[0]["image"] ?>"
                                         alt="<?php echo $book[0]["image"] ?>" />
                                     <div class="book-info">
                                         <h2>
@@ -162,7 +158,7 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
             </div>
             <button type="submit" name="upload" class="mt-4">Upload</button>
 
-            <div class="container mt-4">
+            <div class="container-cus mt-4">
                 <div class="book-card-list">
                     <form action="" method="post">
                         <div class="search-bar">
@@ -188,7 +184,7 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
                                     ?>
                                     <div class="book-card">
                                         <div class="book-card-image">
-                                            <img src="../image/photos/<?php echo $book[0]['image'] ?>"
+                                            <img src="../neon/img/photos/<?php echo $book[0]['image'] ?>"
                                                 alt="<?php echo $book[0]['name'] ?>" />
                                             <div class="book-card-overlay">
                                                 <a href="Post.php?id=<?php echo $book[0]['id'] ?>" class="book-card-button">Add
@@ -300,6 +296,10 @@ if (isset($_POST['upload']) && isset($_POST['review-content']) && count($ReviewB
     <!-- <script src="app.js"></script> -->
     <script src="Post.js"></script>
     <script src="../js/index.js"></script>
+    <script>
+        const searchBtn = document.querySelector(".searchbook");
+        searchBtn.click();
+    </script>
 
 </body>
 

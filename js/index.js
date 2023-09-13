@@ -27,7 +27,7 @@ $(document).ready(function(){
                         var bookCard = `
                         <div class="book-card usersearch_book">
                         <div class="book-card-image">
-                            <img src="../image/photos/${book.image}" alt="${book.image}" />
+                            <img src="../neon/img/photos/${book.image}" alt="${book.image}" />
                             <div class="book-card-overlay">
                                 <a href="#" class="book-card-button"  style="background-color:#ffdf00; color:white;"><i class="fa-solid fa-arrow-right mx-2"></i>Read More</a>
                             </div>
@@ -65,7 +65,7 @@ $(document).ready(function(){
                         console.log(book);
                             var searchBookUser= `<div class="book-card col-md-3 usersearch_book">
                             <div class="book-card-image">
-                            <img src="../image/photos/${book.image}" class="card-img-top" alt="...">
+                            <img src="../neon/img/photos/${book.image}" class="card-img-top" alt="...">
                             <div class="book-card-overlay">
                                 <a href="BookDetail.php?id=${book.id}"  style="background-color:#ffdf00; color:white;" class="book-card-button"><i class="fa-solid fa-arrow-right mx-2"></i>Read More</a>
                             </div>
@@ -89,33 +89,15 @@ $(document).ready(function(){
         }
         
     })
-    // $("#filter_category").on('change',function(){
-    //     if($("#filter_category").val() == "All" && $("#booksearch").val().length == 0){
-    //         location.reload();
-    //         console.log("/////////////////////////")
-    //        // $("#loadmorebtn").remove();
-    //        location.reload();
-    //        //e.preventDefault();
-    //    }
-    // })
+
     $("#search").on("click",function(){
         if($("#booksearch").length>0){
             console.log($("#booksearch").length)
             $("#loadmorebtn").remove();
-            //e.preventDefault();
         }
        
     })
     
-
-
-    // if ($("#filter_category").val() != "All" || $("#booksearch").val().length > 0) {
-    //     $(".load_more").remove();
-    //     console.log("Hello");
-    //}
-    
-
-    //loadmorebtn
     var offset=4;
     var limit=4;
 
@@ -135,7 +117,7 @@ $(document).ready(function(){
                     $.each(balanceBooks, function(index, balanceBook) {
                         var BookCard = `<div class="book-card  usersearch_book">
                         <div class="book-card-image">
-                            <img src="../image/photos/${balanceBook.image}" alt="${balanceBook.image}" />
+                            <img src="../neon/img/photos/${balanceBook.image}" alt="${balanceBook.image}" />
                             <div class="book-card-overlay">
                                 <a href="BookDetail.php?id=${balanceBook.id}" style="background-color:#ffdf00; color:white;"  class="book-card-button"><i class="fa-solid fa-arrow-right mx-2"></i>Read More</a>
                             </div>
@@ -162,10 +144,6 @@ $(document).ready(function(){
     })
 
     if ($("#filter_category").val() == "All") {
-        // $(".load_more").remove();
-        // alert("Hello")
-        // console.log("All");
-//location.reload();
     }
 
     

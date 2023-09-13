@@ -93,10 +93,14 @@
 .commentbox{
   background-color: #d1c8c8;
   border-radius: 20px;
-  width: auto;
+  width: max-content;
   padding: 10px;
 }
-  
+  @media(max-width:500px){
+    .container-fluid{
+      padding: 6px;
+    }
+  }
   /* comment Session style  */
   .comments {
     margin-top: 20px;

@@ -1,62 +1,3 @@
-// Comment Load More Function
-// $(document).ready(function() {
-//     var commentsPerPage = 2; // Number of comments to show per page
-//     var $commentList = $('.comment-list');
-//     var $loadMoreBtn = $('.load-more-btn');
-//     var totalComments = $commentList.children('.comment').length;
-//     var visibleComments = commentsPerPage;
-
-//     // Initially hide all comments beyond the specified limit
-//     $commentList.children('.comment:gt(' + (visibleComments - 1) + ')').hide();
-
-//     // Show/hide "Load More" button based on the number of comments
-//     if (totalComments <= visibleComments) {
-//       $loadMoreBtn.hide();
-//     }
-
-//     // Handle "Load More" button click event
-//     $loadMoreBtn.on('click', function() {
-//       visibleComments += commentsPerPage;
-
-//       // Show the next set of comments
-//       $commentList.children('.comment:lt(' + visibleComments + ')').show();
-
-//       // Hide the "Load More" button if all comments are visible
-//       if (visibleComments >= totalComments) {
-//         $loadMoreBtn.hide();
-//       }
-//     });
-//   });
-//function comment loadMore function
-// function CheckCommentLists(id){ //to hide load more btn acct list length
-// 	var commentsPerPage = 2; // Number of comments to show per page
-//     var $commentList = $(`#comment-list-${id}`);
-// 	console.log($commentList);
-//     var $loadMoreBtn = $('.load-more-btn');
-//     var totalComments = $commentList.children('.comment').length;
-//     var visibleComments = commentsPerPage;
-
-//     // Initially hide all comments beyond the specified limit
-//     $commentList.children('.comment:gt(' + (visibleComments - 1) + ')').hide();
-
-//     // Show/hide "Load More" button based on the number of comments
-//     if (totalComments <= visibleComments) {
-//       $loadMoreBtn.hide();
-//     }
-// 	   // Handle "Load More" button click event
-// 	   $loadMoreBtn.on('click', function() {
-// 		visibleComments += commentsPerPage;
-
-// 		// Show the next set of comments
-// 		$commentList.children('.comment:lt(' + visibleComments + ')').show();
-
-// 		// Hide the "Load More" button if all comments are visible
-// 		if (visibleComments >= totalComments) {
-// 		  $loadMoreBtn.hide();
-// 		}
-// 	  });
-
-// }
 //Like Btn
 const LikesBtns = document.querySelectorAll(".like-btn");
 function checkLikes() {
@@ -125,24 +66,22 @@ function LeeError(btn) {
 	let commentList = document.querySelector(`#comment-list-${Id}`);
 	let form = CommentDiv.querySelector("textarea");
 	let cmListItem = `
-					<li class="comment">
+						<li class="comment">
 						<div class="comment-avatar">
-							<img src="${userImage}" alt="${userImage}" />
+							<img src="../neon/img/avatars/${userImage}" alt="${userImage}" />
 						</div>
-						<div class="comment-content">
-						<p class="ago" style="color: #888;">now</p>
+						<div class="comment-content commentbox">
 							<p class="comment-text">
 							${form.value}
 							</p>
-
 							<span class="comment-meta">-
 							${userName}
 							</span>
 						</div>
 					</li>	
-					`
+					`;
 	if (form.value !== "") {
-		$(`#comment-list-${Id}`).prepend(cmListItem)
+		$(`#comment-list-${Id}`).prepend(cmListItem);
 
 		$.ajax({
 			type: "POST",
@@ -265,9 +204,9 @@ function LoadMore() {
 										</div>
 										<div class="comments hide" id = "comment-${review["id"]}">
 											<h4>Comments</h4>
-											<ul class="comment-list" id = "comment-list-${review['id']}">																															
+											<ul class="comment-list" id = "comment-list-${review["id"]}">																															
 										`;
-								}
+					}
 					review.comments.forEach((element) => {
 						authorCard += `
 										<li class="comment" >
@@ -282,8 +221,8 @@ function LoadMore() {
 												${element.name}
 												</span>
 											</div>
-										</li>`;											
-									});
+										</li>`;
+					});
 					authorCard += `
 									</ul>
 

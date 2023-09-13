@@ -153,7 +153,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 <body>
 	<div class="container-fluid Profile-container" style="">
 	<div class="profile-page ">
-		<div class="container profile-container">
+		<div class="container-cus profile-container">
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="profile-header">
 				<div class="profile-edit d-flex justify-content-center ">
@@ -215,7 +215,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 			
 				<!-- Favorite book cards here -->
 				<!-- Books -->
-				<div class="container">
+				<div class="container-cus">
 				<h2 class="section-title">Favorite Books</h2>
 
 					<div class="book-card-list">
@@ -260,7 +260,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 						$review_books = $reviews_model->get_review_book($review['id']);
 
 						?>
-						<div class="container mt-4">
+						<div class="container-cus mt-4">
 						<div class="review" data-review-id="<?php echo $review['id']; ?>">
 							<div class="review-header">
 								<div class="user-profile">
@@ -353,12 +353,20 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 										?>
 										<li class="comment">
 											<div class="comment-avatar">
-												<img src="../image/<?php echo $userInfo["image"] ?>"
+
+												<img src="../neon/img/avatars/<?php
+												if(isset($userinfo['image'])){
+													echo $userInfo["image"];
+												}else{
+													echo "user.jpg";
+												}
+											 ?>"
 													alt="<?php echo $userInfo["image"] ?>" />
 											</div>
 											<div class="comment-content">
 												<div class="commentbox">
-													<span class="">
+													
+													<span class="comment-meta">
 														<?php echo $userInfo['name'] ?>
 													</span>
 													<p class="comment-text">
@@ -472,7 +480,7 @@ $reviews = $reviews_model->get_review_by_userId($user_id);
 	<!-- <script src="app.js"></script> -->
 	<script src="../js/profile.js"></script>
 	<script src="Profile.js"></script>
-	<<script>
+	<script>
 		$(document).ready(function(){
 			<?php foreach ($reviews as $review) : ?>
 				// Get the writing time from PHP (assuming it's stored in a variable called writingTime)

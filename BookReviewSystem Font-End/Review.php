@@ -65,7 +65,7 @@ foreach ($reviews as $review) {
 				$review_books = $reviews_model->get_review_book($review['id']);
 
 				?>
-				<div class="container mt-4">
+				<div class="container-cus mt-4">
 					<div class="review" data-review-id="<?php echo $review['id']; ?>">
 						<div class="review-header">
 							<div class="user-profile">
@@ -157,12 +157,12 @@ foreach ($reviews as $review) {
 									?>
 									<li class="comment" data-comment-id="<?php echo $comment['id']; ?>">
 										<div class="comment-avatar">
-											<img src="../image/<?php echo $userInfo["image"] ?>"
+											<img src="../neon/img/avatars/<?php echo $userInfo["image"] ?>"
 												alt="<?php echo $userInfo["image"] ?>" />
 										</div>
 										<div class="comment-content">
 											<div class="commentbox">
-												<span class="">
+												<span class="comment-meta">
 													<?php echo $userInfo['name'] ?>
 												</span>
 												<p class="comment-text">
@@ -204,7 +204,7 @@ foreach ($reviews as $review) {
 
 	<!-- Footer -->
 	<footer class="footer">
-		<div class="footer-container container">
+		<div class="footer-container ">
 			<div class="footer-content">
 				<div class="footer-section">
 					<h4 class="text-center">About Us</h4>

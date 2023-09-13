@@ -25,7 +25,7 @@ $(document).ready(function(){
                         var authorCard = '<div class="col-md-3 sm-4 mb-3 originalauthors">' +
                             '<div class="card-parent">' +
                             '<div class="author-card">' +
-                            '<img class="author-image card-img-top" src="../image/' + author.image + '" alt="Author Image">' +
+                            '<img class="author-image card-img-top" src="../neon/img/author/' + author.image + '" alt="Author Image">' +
                             '<h2 class="author-name">' + author.name + '</h2>' +
                             '<p class="author-bio">Author Bio</p>' +
                             '<a class="author-website"  href="AuthorDetail.php?id=' + author.id + '" target="_blank">Author\'s Books</a>' +

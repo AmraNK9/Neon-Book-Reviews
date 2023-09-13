@@ -67,9 +67,9 @@ function LeeError(btn) {
 	let cmListItem = `
 										<li class="comment">
 											<div class="comment-avatar">
-												<img src="${userImage}" alt="${userImage}" />
+												<img src="../neon/img/avatars/${userImage}" alt="${userImage}" />
 											</div>
-											<div class="comment-content">
+											<div class="comment-content commentbox">
 												<p class="comment-text">
 												${form.value}
 												</p>

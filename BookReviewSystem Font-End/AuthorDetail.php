@@ -57,6 +57,7 @@ if(isset($_GET['id']))
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="Profile.css">
 </head>
 
 <body>
@@ -69,17 +70,40 @@ if(isset($_GET['id']))
 			</ul>
 		</div>
 	</nav>
-	<div class="container mt-4 mb-3">
-		<div class="row ">
- 			<div class="col-md-4 " >
-				<img class="author-image" src="../image/<?php echo $author_info['image'];  ?>"  width="100%" alt="<?php echo $author_info['image'];  ?>" />
-			</div>
-			<div class="col-md-6">
-				<h2 class="author-name"><?php echo $author_info['name'];  ?></h2>
-				<p class="author-bio">Author Bio</p>
-				<p>
-				<?php echo $author_info['profile'];  ?>
+	<div class="container-cus mt-4 mb-3">
+		<div class="profile-container">
+		<div class="profile-header">
+				<div class="profile-edit d-flex justify-content-center ">
+					<img src="../neon/img/author/<?php if (!empty($userimg)) {
+
+						echo $author_info['image'];
+					} else {
+						echo "user.jpg";
+					} ?>" class="img" id="profileimg" alt="<?php
+					echo $author_info['image'] ?>" />
+
+				</div>
+			
+			
+				<h1 class="profile-name username mt-3">
+					<?php echo $author_info['name']; ?>
+				</h1>
+
+			
+				<p class="profile-bio">
+					<?php if (!empty($author_info['profile'])) {
+						echo $author_info['profile'];
+					} else {
+						// echo "Edit Your Bio";
+					} ?>
 				</p>
+				<div class="d-flex justify-content-center">
+
+					<input type="text" name="usereditbio" placeholder="Bio"
+						class="form-control usereditbio d-none my-3 text-center" id="" value="<?php echo $userbio ?>">
+
+				</div>
+
 			</div>
 		</div>
 		<!-- <div class="author-card-grid-view">
@@ -91,7 +115,7 @@ if(isset($_GET['id']))
 	</div>
 
 	<!-- Books -->
-	<div class="container">
+	<div class="container-cus">
 		<div class="book-card-list">
 			<!-- Search Bar -->
 			<!-- <div class="search-bar">
@@ -113,7 +137,7 @@ if(isset($_GET['id']))
 				?>
 				<div class="book-card">
 					<div class="book-card-image">
-						<img src="<?php echo $book['image'] ?>" alt="<?php echo $book['image'] ?>" />
+						<img src="../neon/img/photos/<?php echo $book['image'] ?>" alt="<?php echo $book['image'] ?>" />
 						<div class="book-card-overlay">
 							<a href="BookDetail.php?id=<?php echo $book['id'] ?>" class="book-card-button">Read More</a>
 						</div>

@@ -4,7 +4,7 @@
   background-color: rgb(216, 212, 212) !important;
   font-family: Arial, sans-serif;
  }
-.book-card {
+.book-card-in-book-detail {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -15,7 +15,7 @@
   }
   
    .book-image {
-    flex-basis: 30%;
+    flex-basis: 20%;
   
   }
   
@@ -209,8 +209,7 @@
   
   /* download icon and review icon */
   .bottom-icons {
-    display: flex;
-    justify-content: space-around;
+
     align-items: center;
     margin-top: 10px;
   }
@@ -230,8 +229,9 @@
   .comments {
     margin-top: 20px;
     padding: 10px 20px;
-    box-shadow: 2px 2px 10px #1111;
+    box-shadow: 2px 2px 10px #00000093;
     border-radius: 5px;
+    background-color: #ffff;
   }
   
   .comment-list {
@@ -376,57 +376,4 @@
 .Quick-Link{
   display: flex;
   justify-content: space-around;
-}
-/* 
-
-.navbar {
-  background-color: #fff !important;
-}
-
-.navbar-brand {
-  color: #007bff !important;
-  font-weight: bold;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
-.navbar-brand img {
-  max-width: 100%;
-  height: auto;
-}
-
-.nav-link {
-  color: #007bff !important;
-  text-align: center;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.nav-link:hover {
-  background-color: #007bff !important;
-  color: #fff !important;
-}
-.hide-in-large{
-  display: none;
-}
-
-
-.active .nav-link{
-  color: #fff;
-  text-decoration: underline;
-} */
-.avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-left: 10px;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.ago{
-  color: #757575;
 }

@@ -135,16 +135,16 @@ if (!isset($_SESSION['user_email'])) {
 	?>
 
 	<div class="container-fluid mt-4" id="concon">
-		<div class="container  back">
+		<div class="container-cus  back">
 
-			<h1>Editor Choice</h1>
+			<h1 class="text-body-secondary">Editor Choice</h1>
 
 			<?php
 			foreach ($editorChoiceCategory as $Category) {
 				$EditoChoice_Book = $editorChoice->genere($Category['category_id']);
 				?>
 
-				<div class="container mb-2 swiper">
+				<div class="container-cus mb-2 swiper">
 					<h2>
 						<?php echo $Category['category_name'] ?>
 					</h2>
@@ -187,7 +187,7 @@ if (!isset($_SESSION['user_email'])) {
 
 
 <!-- Books -->
-<div class="container mt-4 navy" id="">
+<div class="container-cus mt-4 navy" id="">
 	<div class="book-card-list">
 		<!-- <h2 class="ms-2 float-left">Books</h2> -->
 			<div class="view-options  ">
@@ -210,7 +210,7 @@ if (!isset($_SESSION['user_email'])) {
 	</div>
 	<!-- Footer -->
 	<footer class="footer">
-		<div class="footer-container container">
+		<div class="footer-container ">
 			<div class="footer-content">
 				<div class="footer-section">
 					<h4 class="text-center">About Us</h4>
