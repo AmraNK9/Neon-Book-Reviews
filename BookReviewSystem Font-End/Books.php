@@ -91,7 +91,7 @@ if (isset($_POST['searchbyuser'])) {
     <div class="container-cus ">
         <form action="" method="post">
             <div class="row my-2">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <select class="form-control filter-select" name="categoryName" id="filter_category">
                         <option value="All" id="something">All</option>
                         <?php foreach ($getCategory as $category) {
@@ -101,7 +101,7 @@ if (isset($_POST['searchbyuser'])) {
                     </select>
                     
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="input-group">
                         <input type="text" class="form-control" name="bookname" id="booksearch" value="<?php echo isset($_POST['bookname']) ? $_POST['bookname'] : '';  ?>"
                             placeholder="Search..." />
