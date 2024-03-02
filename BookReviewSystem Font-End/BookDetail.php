@@ -22,6 +22,7 @@ if (!isset($_SESSION['user_email'])) {
 	header("location:../login.php");
 }
 
+// $id = 2;
 
 $cid = $_GET['id'];
 $rating = $rating_controller->averageRating($cid);
@@ -66,7 +67,7 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	<link rel="stylesheet" href="BookDetail.css" />
 	<link rel="stylesheet" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="..\js\jquery-3.7.0.min.js"></script>
 	<!-- <link
 			rel="stylesheet"
 			href="style.css"
@@ -155,9 +156,12 @@ if (isset($_POST['submit'])) {
 						</div>
 						<button class="download-icon btn btn-primary" id="read">Read</button>
 						<form action="download.php" method="post">
-							<input class="d-none" type="text" name="file_path" value="../neon/pdf/<?php echo $book[0]['pdf_file'] ?>"  placeholder="Enter File Path">
-							<input class="d-none" type="text" name="file_name" value="<?php echo $book[0]['pdf_file'] ?>" placeholder="Enter File Name">
-							<button  class="mt-3 download-icon btn btn-primary" type="submit" name="download_pdf">Download PDF</button>
+							<input class="d-none" type="text" name="file_path"
+								value="../neon/pdf/<?php echo $book[0]['pdf_file'] ?>" placeholder="Enter File Path">
+							<input class="d-none" type="text" name="file_name"
+								value="<?php echo $book[0]['pdf_file'] ?>" placeholder="Enter File Name">
+							<button class="mt-3 download-icon btn btn-primary" type="submit"
+								name="download_pdf">Download PDF</button>
 						</form>
 					</div>
 
@@ -302,9 +306,37 @@ if (isset($_POST['submit'])) {
 			function openPDF(filePath) {
 				event.preventDefault();
 				var newWindow = window.open();
-				newWindow.document.write('<html><head><title>PDF Document</title></head><body><embed width="100%" height="100%" src="' + filePath + '" type="application/pdf"></embed></body></html>');
-
+				newWindow.document.write(`
+		<html>
+			<head>
+				<title>PDF Document</title>
+				<style>
+					body, html {
+						padding: 0;
+						margin: 0;
+						width: 100%;
+						height: 100%;
+						// overflow: hidden; /* optional - to remove scrollbars */
+					}
+					embed {
+						margin: 0;
+						padding: 0;
+						width: 100%;
+						height: 100%;
+					}
+				</style>
+			</head>
+			<body>
+				<embed
+					src="${filePath}"
+					type="application/pdf"
+					allowfullscreen
+				></embed>
+			</body>
+		</html>
+	`);
 			}
+
 			const user_id = "<?php echo $user_id; ?>";
 			const book_id = "<?php echo $book[0]['id']; ?>";
 			let mark = ""
@@ -366,8 +398,8 @@ if (isset($_POST['submit'])) {
 				}
 			});
 			<?php foreach ($comment as $com): ?>
-						// Get the writing time from PHP (assuming it's stored in a variable called writingTime)
-						var writingTime = "<?php echo $com['date']; ?>";
+								// Get the writing time from PHP (assuming it's stored in a variable called writingTime)
+								var writingTime = "<?php echo $com['date']; ?>";
 
 				// Convert the writing time to JavaScript Date object
 				var writingDate = new Date(writingTime);

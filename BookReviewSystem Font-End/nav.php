@@ -16,7 +16,6 @@ $active_page = $_SERVER['PHP_SELF'];
 <style>
     nav {
         transition: transform 0.6s ease-in-out;
-
     }
 
     .nav {
@@ -31,15 +30,14 @@ $active_page = $_SERVER['PHP_SELF'];
         .nav-height {
             height: 170px;
         }
-     
     }
 
     @media(max-width:440px) {
-      
-        .navbar-nav .nav-item{
-            margin-left:0px
+
+        .navbar-nav .nav-item {
+            margin-left: 0px
         }
-        
+
     }
 
     .hide-navbar {
@@ -51,35 +49,34 @@ $active_page = $_SERVER['PHP_SELF'];
 <nav style="width:100%;top :0px;z-index:99;box-shadow:0px 5px 40px #1111"
     class="navbar position-fixed navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand-logo" href="#">
-        <img src="logo4.png" style="width: 200px; height: 60px" alt="Book Review System Logo" />
+        <img src="logo.png" style="width: 200px; height: 90px " alt="Book Review System Logo" />
     </a>
-
 
     <div class="d-flex justify-content-center navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
             <li
                 class="nav-item <?php echo ($active_page == '/NEON/BookReviewSystem Font-End/index.php') ? 'active2' : '' ?>">
-                <a class="nav-link" style="color:white" href="index.php" onclick="toggleActive(event)"><i
+                <a class="nav-link" href="index.php" onclick="toggleActive(event)"><i
                         class="fa-solid fa-house-chimney mx-2" style="color:white,"></i>Home</a>
             </li>
             <li
                 class="nav-item <?php echo ($active_page == '/NEON/BookReviewSystem Font-End/Books.php') ? 'active2' : '' ?>">
-                <a class="nav-link" style="color:white" href="Books.php" onclick="toggleActive(event)"><i
-                        class="fa-solid fa-book mx-2" style="color:white,"></i>Books</a>
+                <a class="nav-link" href="Books.php" onclick="toggleActive(event)"><i class="fa-solid fa-book mx-2"
+                        style="color:white,"></i>Books</a>
             </li>
             <li
                 class="nav-item <?php echo ($active_page == '/NEON/BookReviewSystem Font-End/AuthorPage.php') ? 'active2' : '' ?>">
-                <a class="nav-link" style="color:white" href="AuthorPage.php" onclick="toggleActive(event)"><i
+                <a class="nav-link" href="AuthorPage.php" onclick="toggleActive(event)"><i
                         class="fa-solid fa-feather mx-2" style="color:white,"></i>Author</a>
             </li>
             <li
                 class="nav-item <?php echo ($active_page == '/NEON/BookReviewSystem Font-End/Review.php') ? 'active2' : '' ?>">
-                <a class="nav-link" style="color:white" href="Review.php" onclick="toggleActive(event)"><i
-                        class="fa-solid fa-message mx-2" style="color:white,"></i>Reviews</a>
+                <a class="nav-link" href="Review.php" onclick="toggleActive(event)"><i class="fa-solid fa-message mx-2"
+                        style="color:white,"></i>Reviews</a>
             </li>
 
             <li class="nav-item profile-icon ">
-                <a class="nav-link " style="color:white" href="Profile.php">
+                <a class="nav-link " href="Profile.php">
 
                     <i class="fa-solid fa-user mx-2" style="color:white,"></i>
                     Profile
